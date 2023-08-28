@@ -1,0 +1,46 @@
+.navbar-custom {
+    padding: 20px 0px;
+    background-color: rgb(13,202,240);
+    height: 49px;
+}
+#login-form-container{
+    padding: 13% 32% 0% 34%;
+    background-color:white;
+}
+.btn-custom{
+    background-color: #FFFFED;
+    color: rgb(79, 76, 76);
+    border: grey 1px solid;
+}
+.btn-custom:hover{
+    background-color: turquoise;
+    color: rgb(79, 76, 76);
+    border: rgb(79, 76, 76) 1px solid;
+}
+#login-submit-button{
+    margin: 0px 10px 0px 70%;
+}
+#register{
+    margin: 5px 0px 0px 10px;
+}
+#register a{
+  color: turquoise;
+}
+#register a:hover{
+  color: grey;
+  text-decoration: underline;
+}
+#login-form{
+    padding: 15px;
+    border: grey 2px solid;
+    border-radius: 20px;
+    background-color: #FFFFED;
+}
+#navbar-title{
+    margin-left: 48%;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    font-size: large;
+    height: 20px;
+}

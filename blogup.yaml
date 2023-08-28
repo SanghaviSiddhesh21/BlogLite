@@ -1,0 +1,527 @@
+openapi: 3.0.0
+info:
+  title: Bloglite
+  version: 1.0.0
+  description: The purpose of this application is to help it's user to better keep track of their tasks and increase their productivity
+              <h2>Error information</h2>
+                  <table>
+                    <thead>
+                      <th>Error Code &nbsp;</th>
+                      <th>Message</th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>E001</td>
+                        <td>Input not of proper format</td>
+                      </tr>
+                      <tr>
+                        <td>E002</td>
+                        <td>User does not exists</td>
+                      </tr>
+                          
+                    </tbody>
+                  </table>
+servers:
+  - url: http://127.0.0.1:8080/
+paths:      
+  /api/newfeed/{userid}:
+    description: >-
+      To get the new feed for the user on the dashboard
+    get:
+      description: To get new feed for user on the dashboard
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          schema:
+            type: string
+            example: '12'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: user object
+                type: object
+                properties:
+                  Existense:
+                    type: string
+                    example: true/false                 
+        '404':
+          description: Resource error
+        '500':
+          description: Internal Server Error
+  /api/createpost:
+    description: End point to create a post for the user.
+    post:
+      description: Operation to create post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: user object
+              type: object
+              properties:
+                userid:
+                  type: string
+                  example: '12'
+                posttitle:
+                  type: string
+                  example: 'Title'
+                postcaption:
+                  type: string
+                  example: 'postcaption'
+                postpic:
+                  type: string
+                  example: "Base64 format"
+      responses:
+        '201':
+          description: Successfully Created.
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                  error_message:
+                    type: string
+        '404':
+          description: Resource error.
+        '500':
+          description: Internal Server Error.
+  /api/userprofile/{userid}:
+    description: >-
+      To get the new feed for the user on the dashboard
+    get:
+      description: To get new feed for user on the dashboard
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          schema:
+            type: string
+            example: '12'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: user object
+                type: object
+                properties:
+                  Existense:
+                    type: string
+                    example: true/false                 
+        '404':
+          description: Resource error
+        '500':
+          description: Internal Server Error
+  /api/preeditpost/{postid}:
+    description: >-
+      To get the new feed for the user on the dashboard
+    get:
+      description: To get new feed for user on the dashboard
+      parameters:
+        - in: path
+          name: postid
+          required: true
+          schema:
+            type: string
+            example: '12'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: user object
+                type: object
+                properties:
+                  Existense:
+                    type: string
+                    example: true/false                 
+        '404':
+          description: Resource error
+        '500':
+          description: Internal Server Error
+  /api/editpostwithimage:
+    description: End point to create a post for the user.
+    post:
+      description: Operation to create post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: user object
+              type: object
+              properties:
+                userid:
+                  type: string
+                postid:
+                  type: string
+                  example: '12'
+                posttitle:
+                  type: string
+                  example: 'Title'
+                postcaption:
+                  type: string
+                  example: 'postcaption'
+                postpic:
+                  type: string
+                  example: "Base64 format"
+      responses:
+        '201':
+          description: Successfully Created.
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                  error_message:
+                    type: string
+        '404':
+          description: Resource error.
+        '500':
+          description: Internal Server Error.
+  /api/editpostwithoutimage:
+    description: End point to create a post for the user.
+    post:
+      description: Operation to create post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: user object
+              type: object
+              properties:
+                userid:
+                  type: string
+                postid:
+                  type: string
+                  example: '12'
+                posttitle:
+                  type: string
+                  example: 'Title'
+                postcaption:
+                  type: string
+                  example: 'postcaption'
+      responses:
+        '201':
+          description: Successfully Created.
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                  error_message:
+                    type: string
+        '404':
+          description: Resource error.
+        '500':
+          description: Internal Server Error.
+    delete:
+      description: Operation to create post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: user object
+              type: object
+              properties:
+                userid:
+                  type: string
+                postid:
+                  type: string
+                  example: '12'
+      responses:
+        '201':
+          description: Successfully Created.
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                  error_message:
+                    type: string
+        '404':
+          description: Resource error.
+        '500':
+          description: Internal Server Error.
+  /api/searched:
+    description: End point to create a post for the user.
+    post:
+      description: Operation to create post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: user object
+              type: object
+              properties:
+                userid:
+                  type: string
+                  example: '1'
+                regexstring:
+                  type: string
+                  example: 'abc'
+      responses:
+        '201':
+          description: Successfully Created.
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                  error_message:
+                    type: string
+        '404':
+          description: Resource error.
+        '500':
+          description: Internal Server Error.
+  /api/followuser:
+    description: End point to create a post for the user.
+    post:
+      description: Operation to create post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: user object
+              type: object
+              properties:
+                userid:
+                  type: string
+                  example: '1'
+                followerid:
+                  type: string
+                  example: '2'
+      responses:
+        '201':
+          description: Successfully Created.
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                  error_message:
+                    type: string
+        '404':
+          description: Resource error.
+        '500':
+          description: Internal Server Error.
+    delete:
+      description: Operation to unfollow user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: user object
+              type: object
+              properties:
+                userid:
+                  type: string
+                  example: '1'
+                followingid:
+                  type: string
+                  example: '12'
+      responses:
+        '201':
+          description: Successfully Created.
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                  error_message:
+                    type: string
+        '404':
+          description: Resource error.
+        '500':
+          description: Internal Server Error.
+  /api/usersfollowing/{userid}:
+    description: >-
+      To get the new feed for the user on the dashboard
+    get:
+      description: To get new feed for user on the dashboard
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          schema:
+            type: string
+            example: '12'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: user object
+                type: object
+                properties:
+                  Existense:
+                    type: string
+                    example: true/false                 
+        '404':
+          description: Resource error
+        '500':
+          description: Internal Server Error
+  /api/usersfollowers/{userid}:
+    description: >-
+      To get the new feed for the user on the dashboard
+    get:
+      description: To get new feed for user on the dashboard
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          schema:
+            type: string
+            example: '12'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: user object
+                type: object
+                properties:
+                  Existense:
+                    type: string
+                    example: true/false                 
+        '404':
+          description: Resource error
+        '500':
+          description: Internal Server Error
+  /api/otheruserprofile/{userid}:
+    description: >-
+      To get the new feed for the user on the dashboard
+    get:
+      description: To get new feed for user on the dashboard
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          schema:
+            type: string
+            example: '12'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: user object
+                type: object
+                properties:
+                  Existense:
+                    type: string
+                    example: true/false                 
+        '404':
+          description: Resource error
+        '500':
+          description: Internal Server Error
+  /api/personaldetails/{userid}:
+    description: >-
+      To get the new feed for the user on the dashboard
+    get:
+      description: To get new feed for user on the dashboard
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          schema:
+            type: string
+            example: '12'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: user object
+                type: object
+                properties:
+                  Existense:
+                    type: string
+                    example: true/false                 
+        '404':
+          description: Resource error
+        '500':
+          description: Internal Server Error
+    put:
+      description:  For starting run log
+      parameters:
+        - in: path
+          name: userid
+          required: true
+          schema:
+            type: string
+            example: '12'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: user object
+              type: object
+              properties:
+                fname:
+                  type: string
+                  example: John
+                lname:
+                  type: string
+                  example: John_password
+                username:
+                  type: string
+                  example: John_password
+                profilepic:
+                  type: string
+                  example: John_password
+      responses:
+        '201':
+          description: Successfully Received.
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: string
+                  error_message:
+                    type: string
+        '404':
+          description: Resource error.
+        '500':
+          description: Internal Server Error.

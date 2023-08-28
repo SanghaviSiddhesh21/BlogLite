@@ -1,0 +1,87 @@
+#navbar-title{
+    margin-left: 47%;
+}
+#navbar-sidebar{
+    margin-left: 45%;
+}
+.navbar-title-router{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+.navbar-sidebar-options{
+    text-decoration: none;
+    color: black;
+}
+
+#addingpost-main-body{
+    text-align: center;
+    margin-top: 8%
+}
+#addpost-fileinput{
+    margin-left: 100px;
+}
+
+#profile-userinfo{
+    border: 1px solid black;
+}
+.profile-userinfo-columnsection{
+    /* border: 1px solid black; */
+    padding-bottom: 40px;
+    margin-left: 50px;
+}
+.profile-userinfo-innercolumnsection{
+    /* border: 1px solid black; */
+    padding-top: 80px;
+    font-size: x-large;
+    font-weight: bolder;
+}
+.profile-posts-columnsection{
+    border: 1px solid black;
+    padding-bottom: 10px;
+}
+.profile-posts-titlesection{
+    border: 1px solid black;
+}
+.profile-posts-descriptionsection{
+    border: 1px solid black;
+}
+.following-rowsection-first{
+    border: 1px solid black;
+    font-weight: bold;
+    font-size: x-large;
+}
+.following-rowsection{
+    border: 1px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+#editpost-main-body{
+    text-align: center;
+    margin-top: 4%;
+}
+#outerfeedbox{
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 35%;
+    padding-right: 25%;
+}
+#innerfeedbox{
+    text-align: center;
+    height: 500px;
+    width: 500px;
+}
+#outercontainer_personaldetails{
+    text-align: center;
+    margin-top: 30px;
+}
+#innercontainer_personaldetails{
+    text-align: center;
+    width: auto;
+}
+.button-custom{
+    border: none;
+    background-color: rgba(245, 243, 239, 0.947);
+    text-decoration: none;
+}

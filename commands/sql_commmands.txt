@@ -1,0 +1,32 @@
+CREATE TABLE "user_table" (
+	"id"	INTEGER,
+	"fname"	TEXT,
+	"lname"	TEXT,
+	"emailid"	TEXT UNIQUE,
+	"username"	TEXT UNIQUE,
+	"password"	TEXT,
+	"dob"	DATE,
+	"profileImage"	TEXT,
+	"dateofjoining"	DATE,
+	"lastlogin"	DATE,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+CREATE TABLE "posts" (
+	"id"	INTEGER,
+	"post"	TEXT,
+	"title"	TEXT,
+	"description"	TEXT,
+	"uid"	INTEGER,
+	"dateposted"	Date,
+	FOREIGN KEY("uid") REFERENCES "user_table"("id"),
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+CREATE TABLE "follows" (
+	"id"	INTEGER,
+	"follower"	INTEGER,
+	"followee"	INTEGER,
+	"dateoffollowing"	DATE,
+	PRIMARY KEY("id" AUTOINCREMENT),
+	FOREIGN KEY("follower") REFERENCES "user_table"("id"),
+	FOREIGN KEY("followee") REFERENCES "user_table"("id")
+);
